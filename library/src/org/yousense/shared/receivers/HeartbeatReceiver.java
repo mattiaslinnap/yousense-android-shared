@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.SystemClock;
 import org.yousense.eventlog.DebugLog;
 import org.yousense.eventlog.EventLog;
+import org.yousense.shared.BaseApp;
 import org.yousense.shared.Config;
 import org.yousense.shared.data.HeartbeatData;
 
@@ -34,6 +35,7 @@ public class HeartbeatReceiver extends BroadcastReceiver {
 	public void onReceive(Context context, Intent intent) {
         // Set data parameters based on current code.
         EventLog.append("app.heartbeat", new HeartbeatData(intent.getAction(), true, Config.HEARTBEAT_INTERVAL));
+        BaseApp.get(context).heartbeat();
 	}
 
 	private static PendingIntent makePendingIntent(Context context) {
