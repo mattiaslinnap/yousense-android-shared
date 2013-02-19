@@ -11,14 +11,7 @@ public class BatteryData {
 	public int status; // 1 unknown, 2 charging, 3 discharging, 4 not charging, 5 full, 0 should never happen 
 	public int level;
 	public int max_level;
-	
-	public BatteryData() {
-        plugged = INVALID;
-        status = INVALID;
-        level = INVALID;
-        max_level = INVALID;
-	}
-	
+
 	public BatteryData(Intent batteryChangedIntent) {
 		plugged = batteryChangedIntent.getIntExtra(BatteryManager.EXTRA_PLUGGED, INVALID);
 		status = batteryChangedIntent.getIntExtra(BatteryManager.EXTRA_STATUS, INVALID);
