@@ -34,8 +34,7 @@ public class HeartbeatReceiver extends BroadcastReceiver {
 	@Override
 	public void onReceive(Context context, Intent intent) {
         // Set data parameters based on current code.
-        EventLog.append("app.heartbeat", new HeartbeatData(intent.getAction(), true, Config.HEARTBEAT_INTERVAL));
-        BaseApp.get(context).heartbeat();
+        EventLog.append("app.heartbeat", new HeartbeatData(true, Config.HEARTBEAT_INTERVAL));
 	}
 
 	private static PendingIntent makePendingIntent(Context context) {
