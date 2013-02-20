@@ -8,7 +8,6 @@ import android.content.Intent;
 import android.os.SystemClock;
 import org.yousense.eventlog.DebugLog;
 import org.yousense.eventlog.EventLog;
-import org.yousense.shared.BaseApp;
 import org.yousense.shared.Config;
 import org.yousense.shared.data.HeartbeatData;
 
@@ -40,7 +39,6 @@ public class HeartbeatReceiver extends BroadcastReceiver {
 	private static PendingIntent makePendingIntent(Context context) {
 		Intent intent = new Intent(context, HeartbeatReceiver.class);
 		intent.setAction(ACTION_HEARTBEAT);
-		PendingIntent pendingIntent = PendingIntent.getBroadcast(context, 0, intent, 0);
-		return pendingIntent;
+		return PendingIntent.getBroadcast(context, 0, intent, 0);
 	}
 }
