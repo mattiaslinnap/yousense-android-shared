@@ -7,16 +7,16 @@ import org.yousense.shared.data.UserUploadData;
 public class UserUploadState {
     public static final String UPLOAD_EVENT_TAG = "user.prefs.upload";
 
-    public static boolean wifiOnly() {
+    public static boolean filesOnMobile() {
         Event<UserUploadData> event = (Event<UserUploadData>)EventLog.getLatest(UPLOAD_EVENT_TAG);
         if (event == null)
-            return false;
+            return true;
         else
-            return event.data.wifi_only;
+            return event.data.files_on_mobile;
     }
 
-    public static void setWifiOnly(boolean wifiOnly) {
+    public static void setFilesOnMobile(boolean filesOnMobile) {
         // Note: make sure not to overwrite other settings when fields are added.
-        EventLog.append(UPLOAD_EVENT_TAG, new UserUploadData(wifiOnly));
+        EventLog.append(UPLOAD_EVENT_TAG, new UserUploadData(filesOnMobile));
     }
 }

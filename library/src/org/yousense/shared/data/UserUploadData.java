@@ -1,9 +1,9 @@
 package org.yousense.shared.data;
 
 public class UserUploadData {
-    public boolean wifi_only;
+    public boolean files_on_mobile;
 
-    public UserUploadData(boolean wifiOnly) {
-        this.wifi_only = wifiOnly;
+    public UserUploadData(boolean filesOnMobile) {
+        this.files_on_mobile = filesOnMobile;
     }
 }
