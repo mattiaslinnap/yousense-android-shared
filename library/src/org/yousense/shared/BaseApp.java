@@ -32,6 +32,8 @@ public abstract class BaseApp extends Application implements EventListener {
         Map<String, Type> types = new HashMap<String, Type>();
         types.put("app.gzip.start", new TypeToken<Event>(){}.getType());
         types.put("app.upload.start", new TypeToken<Event>(){}.getType());
+        types.put("app.upload.success", new TypeToken<Event>(){}.getType());
+        types.put("app.upload.fail", new TypeToken<Event>(){}.getType());
         types.put("user.prefs.pause", new TypeToken<Event<UserPauseData>>(){}.getType());
         types.put("user.prefs.upload", new TypeToken<Event<UserUploadData>>(){}.getType());
         return types;
