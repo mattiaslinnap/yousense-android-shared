@@ -26,6 +26,8 @@ public abstract class BaseApp extends Application implements EventListener {
         // Start the registration service, which must be alive for some broadcast events.
         // Other services are started elsewhere.
         startService(new Intent(this, ReceiverService.class));
+        // Add .nomedia files to data directories, delete old data directories.
+        NoMedia.initDirectories(getApplicationContext());
     }
 
     public Map<String, Type> latestCachePersistTypes() {
